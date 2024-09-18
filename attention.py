@@ -41,7 +41,7 @@ class attention:
             --rehaped tensor 
         """
         # the standard format on multi-head attention 
-        # input (1,448,1024) #output (1,16,448,64)  , here the batch size is 1 , num heads 14  embd 1024
+        # input (1,448,1024) #output (1,16,448,64)  , here the batch size is 1 , num heads 16  embd 1024
         return input_tensor.view(batch_size,seq_len,self.heads,self.head_dim).transpose(1,2)
     
     def forward(self,input , encoder_hidden_states = None):
